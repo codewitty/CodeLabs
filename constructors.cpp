@@ -48,4 +48,20 @@ A function named useGas that accepts a parameter of type double. The value of th
 A function named getGasLevel that accepts no parameters. getGasLevel returns the value of the amount data member.
 */
 
-
+class GasTank {
+    private:
+        double amount;
+    public:
+        GasTank() {
+            amount = 0.0;
+        }
+        void addGas(double gas) {
+            amount += gas;
+        }
+        void useGas(double ggas) {
+            amount -= ggas;
+        }
+        double getGasLevel() {
+            return amount;
+        }
+};
