@@ -65,3 +65,47 @@ class GasTank {
             return amount;
         }
 };
+
+/* Write a full class definition for a class named GasTank, and containing the following members:
+
+A data member named amount of type double.
+A constructor that accepts no parameters. The constructor initializes the data member amount to 0.
+A function named addGas that accepts a parameter of type double. The value of the amount instance variable is increased by the value of the parameter.
+A function named useGas that accepts a parameter of type double. The value of the amount data member is decreased by the value of the parameter. However, if the value of amount is decreased below 0, amount is set to 0.
+A function named isEmpty that accepts no parameters and returns a boolean value. isEmpty returns a boolean value: true if the value of amount is less than 0.1, and false otherwise.
+A function named getGasLevel that accepts no parameters. getGasLevel returns the value of the amount data member.
+*/
+
+class GasTank {
+    private:
+        double amount;
+    public:
+        GasTank() {
+            amount = 0.0;
+        }
+        void addGas(double gas) {
+            amount += gas;
+        }
+        void useGas(double ggas) {
+            amount -= ggas;
+            if (amount < 0) {
+                amount = 0;
+            }
+        }
+        bool isEmpty() {
+            if (amount < 0.1)
+                return true;
+            else
+                return false;
+        }
+        double getGasLevel() {
+            return amount;
+        }
+};
+
+/* Assume the existence of a class named Window with functions named close and freeResources, both of which accept no parameters and return no value. Write a destructor for the class that invokes close followed by freeResources.*/
+
+~Window(){
+    close();
+    freeResources();
+};
