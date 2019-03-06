@@ -111,3 +111,20 @@ class GasTank {
     close();
     freeResources();
 };
+
+/* Given a class Window, with integer data members width, height, xPos, and yPos, write the following two constructors: - a constructor accepting 4 integer arguments: width, height, horizontal position, and vertical position (in that order), that are used to initialize the corresponding members. - a constructor accepting 2 integer arguments: width and height (in that order), that are used to initialize the corresponding members. The xPos and yPos members should be initialized to 0.
+*/
+
+Window(int w, int h, int hp, int vp) {
+    width = w;
+    height = h;
+    xPos = hp;
+    yPos = vp;
+};
+
+Window(int wi, int he) {
+    width = wi;
+    height = he;
+    xPos = 0;
+    yPos = 0;
+};
