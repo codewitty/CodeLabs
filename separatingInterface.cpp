@@ -122,4 +122,52 @@ class Accumulator {
 };
 #endif
 
+/*
+Write the implementation (.cpp file) of the Accumulator class of the previous exercise. The full specification of the class is:
+An data member named sum of type integer.
+A constructor that accepts an integer parameter. THe constructor initializes the data member sum to the value of the parameter.
+A function named getSum that accepts no parameters and returns an integer. getSum returns the value of sum.
+A function named add that accepts an integer parameter and returns no value. add increases the value of sum by the value of the parameter.
+*/
+int sum;
+
+Accumulator::Accumulator(int count) {
+    sum = count;
+}
+
+void Accumulator::add(int addSum){
+    sum += addSum;
+}
+
+int Accumulator::getSum() {
+    return sum;
+}
+
+/*
+Write the interface (.h file) of a class Averager containing:
+A data member named sum of type integer.
+A data member named count of type integer.
+A constructor accepting no parameters.
+A function named getSum that accepts no parameters and returns an integer.
+A function named add that accepts an integer parameter and returns no value.
+A function named getCount that accepts no parameters and returns an integer.
+A function named getAverage that accepts no parameters and returns a double.
+*/
+
+#ifndef AVERAGER_H
+#define AVERAGER_H
+
+class Averager {
+    private:
+        int sum;
+        int count;
+    public:
+        Averager();
+        void add(int);
+        int getSum() ;
+        int getCount();
+        double getAverage();
+};
+#endif
+
 
