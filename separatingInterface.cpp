@@ -170,4 +170,132 @@ class Averager {
 };
 #endif
 
+/*
+Write the implementation (.cpp file) of the Averager class of the previous exercise. The full specification of the class is:
+An data member named sum of type integer.
+An data member named count of type integer.
+A constructor with no parameters. The constructor initializes the data members sum and the data member count to 0.
+A function named getSum that accepts no parameters and returns an integer. getSum returns the value of sum.
+A function named add that accepts an integer parameter and returns no value. add increases the value of sum by the value of the parameter, and increments the value of count by one.
+A function named getCount that accepts no parameters and returns an integer. getCount returns the value of the count data member, that is, the number of values added to sum.
+A function named getAverage that accepts no parameters and returns a double. getAverage returns the average of the values added to sum. The value returned should be a value of type double (and therefore you must cast the data members to double prior to performing the division).
+*/
 
+int sum;
+int count;
+
+Averager::Averager() {
+    sum = 0;
+	count = 0;
+}
+
+void Averager::add(int addSum){
+    sum += addSum;
+	count += 1;
+}
+
+int Averager::getSum() {
+    return sum;
+}
+
+
+int Averager::getCount() {                                                         
+      return count; 
+}
+
+double Averager::getAverage() {                                                         
+    return (double)sum / (double)count; 
+}
+
+/*
+Write the interface (.h file) of a class GasTank containing:
+A data member named amount of type double.
+A data member named capacity of type double.
+A constructor that accepts a parameter of type double.
+A function named addGas that accepts a parameter of type double and returns no value.
+A function named useGas that accepts a parameter of type double and returns no value.
+A function named isEmpty that accepts no parameters and returns a boolean value.
+A function named isFull that accepts no parameters and returns a boolean value.
+A function named getGasLevel that accepts no parameters and returns a double.
+A function named fillUp that accepts no parameters and returns a double.
+*/
+
+#ifndef GASTANK_H
+#define GASTANK_H
+
+class GasTank {
+    private:
+        double amount;
+	    double capacity;
+    public:
+        GasTank(double );
+        void addGas(double);
+        void useGas(double);
+	    bool isFull();
+	    bool isEmpty();
+    	double getGasLevel();
+	    double fillUp();
+};
+#endif
+
+/*
+Write the implementation (.cpp file) of the GasTank class of the previous exercise. The full specification of the class is:
+
+A data member named amount of type double.
+An data member named capacity of type double.
+A constructor that accepts a parameter of type double. The value of the parameter is used to initialize the value of capacity. The constructor also sets amount to zero.
+A function named addGas that accepts a parameter of type double. The value of the amount instance variable is increased by the value of the parameter. However, if the value of amount is increased beyond the value of capacity, amount is set to capacity.
+A function named useGas that accepts a parameter of type double. The value of the amount data member is decreased by the value of the parameter. However, if the value of amount is decreased below 0, amount is set to 0.
+A function named isEmpty that accepts no parameters and returns a boolean value. isEmpty returns true if the value of amount is less than 0.1, and false otherwise.
+A function named isFull that accepts no parameters and returns a boolean value.. isFull returns true if the value of amount is greater than capacity-0.1, and false otherwise.
+A function named getGasLevel that accepts no parameters. getGasLevel returns the value of the amount data member.
+A function named fillUp that accepts no parameters and returns a double. fillUp increases amount to capacity and returns the difference between the value of capacity and the original value of amount (that is, the amount of gas that is needed to fill the tank to capacity).
+*/
+
+double amount;
+double capacity;
+
+GasTank::GasTank(double sum) {
+    amount = 0;
+	capacity = sum;
+}
+
+void GasTank::addGas(double addSum){
+	amount += addSum;
+	if (amount > capacity) {
+		amount = capacity;
+}
+}
+
+void GasTank::useGas(double less) {
+	amount -= less;
+	if (amount < 0) {
+		amount = 0;
+}
+}
+bool GasTank::isEmpty() {
+    if (amount < 0.1) {
+		return true; 
+}
+    else
+        return false;
+}
+
+bool GasTank::isFull() {                                                         
+	if (amount > (capacity - 0.1)) {
+		return true;
+}
+    else
+        return false;
+}
+
+double GasTank::getGasLevel() {
+	return amount;
+}
+
+double GasTank::fillUp() {
+	int ogAmt;
+	ogAmt = amount;
+	amount = capacity;
+	return capacity - ogAmt;
+}
