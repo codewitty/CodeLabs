@@ -48,3 +48,9 @@ CameraPhone::CameraPhone(int iSize, int mSize) {
 int CameraPhone::numPictures(){
     return (memorySize / imageSize);
 }
+
+/*
+Assume the existence of a Building class. Define a derived class, ApartmentBuilding that contains four (4) data members: an integer named numFloors, an integer named unitsPerFloor, a boolean named hasElevator, and a boolean named hasCentralAir. There is a constructor containing parameters for the initialization of the above variables (in the same order as they appear above). There are also two functions: the first, getTotalUnits, accepts no parameters and returns the total number of units in the building; the second, isLuxuryBuilding accepts no parameters and returns true if the building has central air, an elevator and 2 or less units per floor.
+*/
+
+
